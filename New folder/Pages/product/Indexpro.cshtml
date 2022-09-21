@@ -1,0 +1,45 @@
+﻿
+@page
+@model TD4.Pages.product.IndexproModel
+@{
+}
+
+<br />
+<h2>List of Products </h2>
+<a class='btn btn-primary btn-sm' href="/product/createpro"> New Product </a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product_Id</th>
+            <th>Product_Name</th>
+            <th>Location</th>
+            <th>Fess</th>
+            <th>Category_Id</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listproduct)
+        {
+            <tr>
+
+                <td>@item.product_id</td>
+                <td>@item.product_name</td>
+                <td>@item.location</td>
+                <td>@item.fees</td>
+                <td>@item.category_id</td>
+                
+
+
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/product/Editpro?product_id=@item.product_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/product/Deletepro?product_id=@item.product_id">Delete</a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>

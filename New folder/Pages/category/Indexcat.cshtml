@@ -1,0 +1,38 @@
+﻿@page
+@model TD4.Pages.category.IndexcatModel
+@{
+}
+
+<br />
+<h2>List of Categories </h2>
+<a class='btn btn-primary btn-sm' href="/category/createcat"> New Category </a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category_ID</th>
+            <th>Category_Name</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listcategory)
+        {
+            <tr>
+
+                <td>@item.category_id</td>
+                <td>@item.category_name</td>
+                
+             
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/category/Editcat?category_id=@item.category_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/category/Deletecat?category_id=@item.category_id">Delete</a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+

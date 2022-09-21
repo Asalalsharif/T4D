@@ -1,0 +1,39 @@
+﻿@page
+@model TD4.Pages.order.IndexordModel
+@{
+}
+<br />
+<h2>List of Products </h2>
+<a class='btn btn-primary btn-sm' href="/order/createord"> New Product </a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Order_Id</th>
+            <th>Product_Id</th>
+            <th>Customer_Id</th>
+            <th>Fess</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listorder)
+        {
+            <tr>
+
+                <td>@item.order_id</td>
+                <td>@item.product_id</td>
+                <td>@item.customer_id</td>
+                <td>@item.fees</td>
+                
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/order/Editord?order_id=@item.order_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/order/Deleteord?order_id=@item.product_id">Delete</a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
